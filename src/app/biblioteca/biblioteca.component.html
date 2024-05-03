@@ -1,0 +1,50 @@
+<div class="w-screen h-full p-10 bg-amber-50 flex flex-col items-center">
+  <section class="flex justify-end">
+    <div class="w-12 h-12 rounded-full">
+      <mat-icon (click)="logout()" aria-hidden="false" aria-label="Example home icon" fontIcon="logout" class="text-right font-medium scale-100"></mat-icon>
+    </div>
+  </section>
+
+  <section class="w-9/12">
+
+    <section class="w-full flex flex-col items-center justify-center">
+      <p class="text-5xl font-semibold font-[Georgia]">Biblioteca</p>
+    </section>
+
+    <section class="flex justify-end gap-4">
+      <div (click)="openDialogInsertar({})" class="flex justify-center items-center w-12 h-12 rounded-full bg-amber-500 shadow-xl">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="auto_stories" class="text-right font-medium scale-150)"></mat-icon>
+      </div>
+      <div (click)="openDialogInsertarAutor({})" class="flex justify-center items-center w-12 h-12 rounded-full bg-amber-500 shadow-xl">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person_add" class="text-right font-medium scale-150)"></mat-icon>
+      </div>
+    </section>
+
+    <section class="flex gap-4 mt-12">
+      <select *ngFor="let filtro of filtros" placeholder="disponible" class="w-52 h-10 rounded-xl bg-amber-200 flex justify-center items-center px-2">
+        <option>{{filtro.nombre}}</option>
+        <option>{{filtro.lista}}</option>
+    </select>
+
+  </section>
+
+  <section class="grid grid-cols-4 gap-12 mt-8">
+    <article *ngFor="let libro of libros" (click)="openDialogEditar({libro})" class="w-52 h-80 bg-amber-600/80 rounded-xl flex flex-col items-center relative">
+      <img *ngIf="libro.url !== ''" class="w-full h-80 object-cover rounded-xl" [src]="libro.url" [alt]="libro.titulo">
+
+      <div *ngIf="libro.url == ''" class="flex flex-col justify-center items-center">
+        <p class="font-[Georgia] text-center text-xl mt-4">{{libro.titulo}}</p>
+
+        <div class="flex flex-col justify-center items-center mt-1">
+          <p class="text-xs" *ngFor="let autor of libro.autores">{{autor}}</p>
+        </div>
+
+        <p class="absolute bottom-5">{{libro.editorial}}</p>
+      </div>
+    </article>
+  </section>
+
+</section>
+
+
+</div>

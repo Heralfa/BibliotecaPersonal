@@ -1,0 +1,57 @@
+<div class="w-full h-full bg-amber-50 text-black">
+  <span mat-dialog-close class="flex justify-end">
+    <i class="fa-solid fa-xmark text-xl"></i>
+</span>
+
+<article class="flex justify-center items-center text-4xl mt-4">
+  <p class="font-medium font-roboto">Insertar autor</p>
+</article>
+
+<section class="w-full grid grid-cols-2 mt-12">
+
+  <article class="flex justify-center items-center">
+    <img class="w-56 h-80 object-cover rounded-xl" [src]="formulario" [alt]="data.titulo">
+  </article>
+
+  <article>
+    <form [formGroup]="formulario" class="w-full flex flex-col justify-center">
+      <article class="mt-8">
+        <p class="text-xs ml-2">Nombre</p>
+        <input class="form-control" formControlName="nombre" class="w-96 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Apellido</p>
+        <input class="form-control" formControlName="apellido" class="w-96 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Pseudónimo</p>
+        <input class="form-control" type="number" formControlName="pseudonimo" class="w-96 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Fecha de nacimiento</p>
+        <input class="form-control" type="number" formControlName="fechaNacimiento" class="w-96 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Biografía</p>
+        <input class="form-control" formControlName="biografia" class="w-96 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Foto</p>
+        <input class="form-control" formControlName="url" class="w-96 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+
+
+      <button class="w-64 h-10 bg-amber-500 mt-4 rounded-xl m-auto" type="submit" [disabled]="!formulario.valid" (click)="guardar()">Guardar</button>
+    </form>
+
+  </article>
+
+</section>
+
+</div>

@@ -1,0 +1,80 @@
+<div class="w-full h-full bg-amber-50 text-black">
+  <span mat-dialog-close class="flex justify-end">
+    <i class="fa-solid fa-xmark text-xl"></i>
+</span>
+
+<article class="flex justify-center items-center text-4xl mt-4">
+  <p class="font-medium font-roboto">Editar libro</p>
+</article>
+
+<section class="w-full grid grid-cols-2 mt-12">
+
+  <article class="w-full flex justify-center items-center">
+
+    <article class="w-[33rem] h-[50rem] bg-amber-600/80 rounded-xl flex flex-col items-center relative">
+      <img *ngIf="data.libro.url !== ''" class="w-[33rem] h-[50rem] object-cover rounded-xl" [src]="data.libro.url" [alt]="data.titulo">
+
+      <div *ngIf="data.libro.url == ''" class="flex flex-col justify-center items-center">
+        <p class="font-[Georgia] text-center text-4xl mt-8">{{data.libro.titulo}}</p>
+
+        <div class="flex flex-col justify-center items-center mt-1">
+          <p class="text-lg" *ngFor="let autor of data.libro.autores">{{autor}}</p>
+        </div>
+
+        <p class="absolute bottom-5 text-lg">{{data.libro.editorial}}</p>
+      </div>
+    </article>
+
+  </article>
+
+
+  <article>
+    <form [formGroup]="formulario" class="w-full flex flex-col justify-center">
+      <article class="mt-8">
+        <p class="text-xs ml-2">Titulo</p>
+        <input class="form-control" formControlName="titulo" class="w-10/12 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Autores</p>
+        <select formControlName="autores" id="autores" placeholder="autores" class="w-10/12 h-10 rounded-xl bg-amber-100/80 px-2">
+          <option *ngFor="let autor of autores" [value]="autor">{{autor}}</option>
+        </select>
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Género</p>
+        <input class="form-control" formControlName="genero" class="w-10/12 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Año de publicación</p>
+        <input class="form-control" type="number" formControlName="anoPublicacion" class="w-10/12 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Sinopsis</p>
+        <textarea cols="30" rows="10" class="form-control" formControlName="sinopsis" class="w-10/12 h-30 rounded-xl bg-amber-100/80 px-2">
+        </textarea>
+      </article>
+
+      <article class="mt-12">
+        <p class="text-xs ml-2">Editorial</p>
+        <input class="form-control" formControlName="editorial" class="w-10/12 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Portada</p>
+        <input class="form-control" formControlName="url" class="w-10/12 h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+
+
+      <button class="w-64 h-10 bg-amber-500 mt-4 rounded-xl m-auto" type="submit" [disabled]="!formulario.valid" (click)="registrar()">Guardar cambios</button>
+    </form>
+
+  </article>
+
+</section>
+
+</div>

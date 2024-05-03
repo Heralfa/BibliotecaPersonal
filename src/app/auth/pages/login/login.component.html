@@ -1,0 +1,38 @@
+<div class="w-screen h-full p-10 flex items-center bg-amber-50">
+
+  <section class="w-1/2">
+
+    <p class="text-5xl font-semibold text-amber-950 font-[Georgia]">Iniciar sesión</p>
+
+    <div class="flex mt-1">
+      <p class="text-sm">¿No tienes una cuenta?</p>
+      <a [routerLink]="['/registro']" class="text-sm ml-2 text-amber-600">Registrarse</a>
+    </div>
+
+
+    <form [formGroup]="formulario" class=" flex flex-col justify-center">
+
+      <article class="mt-12">
+        <p class="text-xs ml-2">Correo electrónico</p>
+        <input class="form-control" formControlName="correo" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
+      </article>
+
+      <article class="mt-4">
+        <p class="text-xs ml-2">Contraseña</p>
+
+        <div class="flex items-center relative">
+          <input class="form-control" formControlName="contrasena" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility" class="absolute bottom-2 right-40"></mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility_off"></mat-icon>
+        </div>
+
+      </article>
+
+
+
+      <button class="w-64 h-10 bg-amber-500 mt-12 rounded-xl m-auto" type="submit" [disabled]="!formulario.valid" (click)="logIn()">Iniciar sesión</button>
+    </form>
+
+  </section>
+
+</div>
