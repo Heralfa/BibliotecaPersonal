@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import './login.js';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   formulario: FormGroup;
+  visible: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -26,6 +28,10 @@ export class LoginComponent implements OnInit {
   logIn(){
     console.log(this.formulario.value);
     this.router.navigate(['/biblioteca']);
+  }
+
+  visibilidad(){
+    this.visible = !this.visible;
   }
 
 }

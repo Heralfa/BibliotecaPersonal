@@ -1,4 +1,4 @@
-<div class="w-full h-full bg-amber-50 text-black">
+<div class="w-full h-fit bg-amber-50 bg-scroll text-black">
   <span mat-dialog-close class="flex justify-end">
     <i class="fa-solid fa-xmark text-xl"></i>
 </span>
@@ -7,12 +7,12 @@
   <p class="font-medium font-roboto">Editar libro</p>
 </article>
 
-<section class="w-full grid grid-cols-2 mt-12">
+<section class="w-full grid grid-cols-2 mt-2">
 
   <article class="w-full flex justify-center items-center">
 
-    <article class="w-[33rem] h-[50rem] bg-amber-600/80 rounded-xl flex flex-col items-center relative">
-      <img *ngIf="data.libro.url !== ''" class="w-[33rem] h-[50rem] object-cover rounded-xl" [src]="data.libro.url" [alt]="data.titulo">
+    <article class="w-[25rem] h-[42rem] bg-amber-600/80 rounded-xl flex flex-col items-center relative">
+      <img *ngIf="data.libro.url !== ''" class="w-[25rem] h-[42rem] object-cover rounded-xl" [src]="data.libro.url" [alt]="data.titulo">
 
       <div *ngIf="data.libro.url == ''" class="flex flex-col justify-center items-center">
         <p class="font-[Georgia] text-center text-4xl mt-8">{{data.libro.titulo}}</p>
@@ -70,7 +70,7 @@
 
 
 
-      <button class="w-64 h-10 bg-amber-500 mt-4 rounded-xl m-auto" type="submit" [disabled]="!formulario.valid" (click)="registrar()">Guardar cambios</button>
+      <button class="w-64 h-10 bg-amber-500 mt-4 rounded-xl m-auto mb-8" type="submit" [disabled]="!formulario.valid" (click)="registrar()">Guardar cambios</button>
     </form>
 
   </article>

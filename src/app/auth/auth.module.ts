@@ -6,6 +6,9 @@ import { AuthRoutingModule } from './auth-routing.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { RegistroComponent } from './pages/registro/registro.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { NativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core'
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import { RegistroComponent } from './pages/registro/registro.component';
     AuthRoutingModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    NativeDateModule,
+    MatNativeDateModule
   ]
 })
 export class AuthModule { }

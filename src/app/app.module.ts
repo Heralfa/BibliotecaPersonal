@@ -12,6 +12,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { InsertarLibroDialogComponent } from './insertar-libro-dialog/insertar-libro-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { InsertarAutorDialogComponent } from './insertar-autor-dialog/insertar-autor-dialog.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { NativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core'
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { InsertarAutorDialogComponent } from './insertar-autor-dialog/insertar-a
     MatSliderModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    NativeDateModule,
+    MatNativeDateModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

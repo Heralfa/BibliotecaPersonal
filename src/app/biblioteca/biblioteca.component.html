@@ -21,9 +21,19 @@
     </section>
 
     <section class="flex gap-4 mt-12">
-      <select *ngFor="let filtro of filtros" placeholder="disponible" class="w-52 h-10 rounded-xl bg-amber-200 flex justify-center items-center px-2">
-        <option>{{filtro.nombre}}</option>
-        <option>{{filtro.lista}}</option>
+      <select placeholder="disponible" class="w-52 h-10 rounded-xl bg-amber-200 flex justify-center items-center px-2">
+        <option *ngFor="let editorial of editoriales" selected>Género</option>
+        <option *ngFor="let genero of generos">{{genero.nombre}}</option>
+    </select>
+
+      <select placeholder="disponible" class="w-52 h-10 rounded-xl bg-amber-200 flex justify-center items-center px-2">
+        <option *ngFor="let editorial of editoriales" selected>Autor</option>
+        <option *ngFor="let autor of autores">{{autor.nombre}}</option>
+    </select>
+
+      <select placeholder="disponible" class="w-52 h-10 rounded-xl bg-amber-200 flex justify-center items-center px-2">
+        <option *ngFor="let editorial of editoriales" selected>Editorial</option>
+        <option *ngFor="let editorial of editoriales">{{editorial.nombre}}</option>
     </select>
 
   </section>

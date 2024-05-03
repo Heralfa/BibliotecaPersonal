@@ -13,36 +13,43 @@
     <form [formGroup]="formulario" class=" flex flex-col justify-center">
       <article class="mt-8">
         <p class="text-xs ml-2">Nombre(s)</p>
-        <input class="form-control" formControlName="nombre" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
+        <input class="form-control" formControlName="nombre" class="w-[28rem] h-10 rounded-xl bg-amber-100/80 px-2">
       </article>
 
       <article class="mt-4">
         <p class="text-xs ml-2">Apellido paterno</p>
-        <input class="form-control" formControlName="apellidoPaterno" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
+        <input class="form-control" formControlName="apellidoPaterno" class="w-[28rem] h-10 rounded-xl bg-amber-100/80 px-2">
       </article>
 
       <article class="mt-4">
         <p class="text-xs ml-2">Apellido materno</p>
-        <input class="form-control" formControlName="apellidoMaterno" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
+        <input class="form-control" formControlName="apellidoMaterno" class="w-[28rem] h-10 rounded-xl bg-amber-100/80 px-2">
       </article>
 
       <article class="mt-4">
         <p class="text-xs ml-2">Fecha de nacimiento</p>
-        <input class="form-control" formControlName="fechaNacimiento" class="w-[8rem] h-10 rounded-xl bg-amber-100/80 px-2">
+
+        <div class="flex items-center">
+          <input matInput [matDatepicker]="picker" class="form-control" formControlName="fechaNacimiento" class="w-[12rem] h-10 rounded-xl bg-amber-100/80 px-2">
+
+          <mat-datepicker-toggle matSuffix [for]="picker" class="text-amber-950"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+
       </article>
 
       <article class="mt-12">
         <p class="text-xs ml-2">Correo electrónico</p>
-        <input class="form-control" formControlName="correo" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
+        <input class="form-control" formControlName="correo" class="w-[28rem] h-10 rounded-xl bg-amber-100/80 px-2">
       </article>
 
       <article class="mt-4">
         <p class="text-xs ml-2">Contraseña</p>
 
         <div class="flex items-center relative">
-          <input class="form-control" formControlName="contrasena" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility" class="absolute bottom-2 right-40"></mat-icon>
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility_off"></mat-icon>
+          <input class="form-control" formControlName="contrasena" type="password" class="w-[28rem] h-10 rounded-xl bg-amber-100/80 px-2">
+          <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility" class="absolute bottom-2 right-40"></mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility_off"></mat-icon> -->
         </div>
 
       </article>

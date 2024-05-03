@@ -14,16 +14,16 @@
 
       <article class="mt-12">
         <p class="text-xs ml-2">Correo electrónico</p>
-        <input class="form-control" formControlName="correo" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
+        <input class="form-control" formControlName="correo" class="w-[28rem] h-10 rounded-xl bg-amber-100/80 px-2">
       </article>
 
       <article class="mt-4">
         <p class="text-xs ml-2">Contraseña</p>
 
-        <div class="flex items-center relative">
-          <input class="form-control" formControlName="contrasena" class="w-[22rem] h-10 rounded-xl bg-amber-100/80 px-2">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility" class="absolute bottom-2 right-40"></mat-icon>
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="visibility_off"></mat-icon>
+        <div class="flex items-center">
+          <input class="form-control" formControlName="contrasena" type="password" class="w-[28rem] h-10 rounded-xl bg-amber-100/80 px-2">
+          <!-- <mat-icon *ngIf="visible" aria-hidden="false" aria-label="Example home icon" fontIcon="visibility" onclick="toggleMostrarContrasena()"></mat-icon>
+          <mat-icon *ngIf="!visible" aria-hidden="false" aria-label="Example home icon" fontIcon="visibility_off" onclick="toggleMostrarContrasena()"></mat-icon> -->
         </div>
 
       </article>

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditarLibroDialogComponent } from '../editar-libro-dialog/editar-libro-dialog.component';
 import { InsertarLibroDialogComponent } from '../insertar-libro-dialog/insertar-libro-dialog.component';
 import { InsertarAutorDialogComponent } from '../insertar-autor-dialog/insertar-autor-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-biblioteca',
@@ -19,14 +20,30 @@ export class BibliotecaComponent implements OnInit {
     {libroId: 6, titulo: 'It', genero: 'Terror', publicacion: '2000', autores: ['stephen E. King'], editorial: 'Debolsillo', url: 'https://m.media-amazon.com/images/I/71NaD6ZH4ZL._AC_UF1000,1000_QL80_.jpg'}
   ];
 
-  filtros: any = [
-    {nombre: 'Género', lista: ['Terror', 'Historia']},
-    {nombre: 'Autor', lista: ['stephen E. King']},
-    {nombre: 'Editorial', lista: ['Patria', 'Debolsillo']}
+  generos: any = [
+    {id: '1', nombre: 'Narrativa'},
+    {id: '2', nombre: 'Matemáticas'},
+    {id: '3', nombre: 'Siencias naturales'},
+    {id: '4', nombre: 'Filosofía'}
+  ];
+
+  autores: any = [
+    {id: '1', nombre: 'Stephen King'},
+    {id: '2', nombre: 'Travis Langley'},
+    {id: '3', nombre: 'BAldor'},
+    {id: '4', nombre: 'Dan Brown'}
+  ];
+
+  editoriales: any = [
+    {id: '1', nombre: 'B'},
+    {id: '2', nombre: 'U'},
+    {id: '3', nombre: 'Debolsillo'},
+    {id: '4', nombre: 'Patria'}
   ];
 
   constructor(
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -60,6 +77,10 @@ export class BibliotecaComponent implements OnInit {
   logout(){
     localStorage.removeItem('user');
     console.log('Logout');
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 500);
+
   }
 
 
