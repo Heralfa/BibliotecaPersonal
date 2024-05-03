@@ -18,6 +18,7 @@ export class InsertarLibroDialogComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.formulario = this.fb.group({
+      id: ['',],
       titulo: ['', Validators.required],
       genero: ['', Validators.required],
       anoPublicacion: ['', Validators.required],
